@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Student.h"
 
 @interface AppDelegate ()
 
@@ -16,30 +17,90 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    Student* stud1 = [Student new];
+    Student* stud2 = [stud1 mutableCopy];
+    Student* stud3 = [stud1 mutableCopy];
+    Student* stud4 = [stud1 mutableCopy];
+    Student* stud5 = [stud1 mutableCopy];
+    Student* stud6 = [stud1 mutableCopy];
+    
+    stud1.lastName = @"Petrov";
+    stud2.lastName = @"Ivanov";
+    stud3.lastName = @"Sidorov";
+    stud4.lastName = @"Papin";
+    stud5.lastName = @"Medvishin";
+    stud6.lastName = @"Smirnov";
+    
+    stud1.name = @"Kolya";
+    stud2.name = @"Vanya";
+    stud3.name = @"Ivan";
+    stud4.name = @"Dima";
+    stud5.name = @"Vova";
+    stud6.name = @"Sergey";
+    
+    stud1.speech = @"I'm biologist";
+    stud2.speech = @"I'm geologist";
+    stud3.speech = @"I'm chemist";
+    stud4.speech = @"I'm psychologist";
+    stud5.speech = @"I'm mathematician";
+    stud6.speech = @"I'm programmer";
+    
+    stud1.age = 25;
+    stud2.age = 22;
+    stud3.age = 27;
+    stud4.age = 18;
+    stud5.age = 20;
+    stud6.age = 22;
+    
+    NSArray* arrayStudent = @[stud1,stud2,stud3,stud4,stud5,stud6];
+     NSMutableDictionary* classRegister = [NSMutableDictionary new];
+    
+    for (Student* stud in arrayStudent) {
+        NSString* key = [stud studentsKeyName:stud.name plusLastName:stud.lastName];
+        [classRegister setObject:stud forKey:key];
+    }
+    
+    NSArray* sArray = [classRegister keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [[obj1 name] compare:[obj2 name]];
+    }];
+    
+    for (NSString* key in sArray) {
+        id obj = [classRegister objectForKey:key];
+        NSLog(@"\nkey = %@\n%@\n ", key, obj);
+    }
+    
+    /* NSMutableArray* array = [NSMutableArray new];
+     for (NSString* key in [classRegister allKeys]){
+     id obj = [classRegister objectForKey:key];
+     [array addObject:obj];
+     NSLog(@"\nkey = %@\n%@\n ", key, obj);
+     }
+     
+     NSSortDescriptor *sortOne = [[NSSortDescriptor alloc] initWithKey: @"age" ascending: YES];
+     NSArray* sortArray = [array sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortOne, nil]];
+     
+     for (Student* stud in sArray) {
+     NSLog(@"%@",stud);
+     }
+     */
+    /*
+     NSArray* sArray = [classRegister keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
+     return [[NSNumber numberWithInteger:[obj1 age]] compare:[NSNumber numberWithInteger:[obj2 age]]];
+     }];
+     */
+    /*
+    NSMutableDictionary* classRegister2 = [NSMutableDictionary new];
+    for (Student* stud in arrayStudent) {
+        [classRegister2 setObject:stud forKey:@[stud.name,stud.lastName]];
+    }
+    
+    //Доступ к первому элементу массива в ключе словаря
+    NSString* str = [classRegister2[@[stud1.name,stud1.lastName]] objectAtIndex:0];
+    NSLog(@"stud1.name = %@",str);
+    */
+    
     return YES;
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

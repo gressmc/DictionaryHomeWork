@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Student;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

@@ -14,6 +14,7 @@
 		84CFF47119FD1C18001B3644 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CFF47019FD1C18001B3644 /* Images.xcassets */; };
 		84CFF47419FD1C18001B3644 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CFF47219FD1C18001B3644 /* LaunchScreen.xib */; };
 		84CFF48019FD1C18001B3644 /* DictionaryHomeWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CFF47F19FD1C18001B3644 /* DictionaryHomeWorkTests.m */; };
+		84CFF48B19FD889F001B3644 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CFF48A19FD889F001B3644 /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		84CFF47919FD1C18001B3644 /* DictionaryHomeWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryHomeWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CFF47E19FD1C18001B3644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CFF47F19FD1C18001B3644 /* DictionaryHomeWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaryHomeWorkTests.m; sourceTree = "<group>"; };
+		84CFF48919FD889F001B3644 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		84CFF48A19FD889F001B3644 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 			children = (
 				84CFF46719FD1C18001B3644 /* AppDelegate.h */,
 				84CFF46819FD1C18001B3644 /* AppDelegate.m */,
+				84CFF48919FD889F001B3644 /* Student.h */,
+				84CFF48A19FD889F001B3644 /* Student.m */,
 				84CFF46A19FD1C18001B3644 /* ViewController.h */,
 				84CFF46B19FD1C18001B3644 /* ViewController.m */,
 				84CFF46D19FD1C18001B3644 /* Main.storyboard */,
@@ -222,6 +227,7 @@
 				84CFF46C19FD1C18001B3644 /* ViewController.m in Sources */,
 				84CFF46919FD1C18001B3644 /* AppDelegate.m in Sources */,
 				84CFF46619FD1C18001B3644 /* main.m in Sources */,
+				84CFF48B19FD889F001B3644 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
