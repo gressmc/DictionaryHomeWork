@@ -26,7 +26,7 @@
     Student* stud6 = [stud1 mutableCopy];
     
     stud1.lastName = @"Petrov";
-    stud2.lastName = @"Ivanov";
+    stud2.lastName = @"Иванов";
     stud3.lastName = @"Sidorov";
     stud4.lastName = @"Papin";
     stud5.lastName = @"Medvishin";
@@ -61,6 +61,13 @@
         [classRegister setObject:stud forKey:key];
     }
     
+    NSArray *keys = [[classRegister allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    for (NSString* str in keys) {
+        NSLog(@"%@", str);
+    }
+    
+    
+    /*
     NSArray* sArray = [classRegister keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
         return [[obj1 name] compare:[obj2 name]];
     }];
@@ -69,7 +76,7 @@
         id obj = [classRegister objectForKey:key];
         NSLog(@"\nkey = %@\n%@\n ", key, obj);
     }
-    
+    */
     /* NSMutableArray* array = [NSMutableArray new];
      for (NSString* key in [classRegister allKeys]){
      id obj = [classRegister objectForKey:key];
