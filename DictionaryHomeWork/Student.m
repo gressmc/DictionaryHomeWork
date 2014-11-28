@@ -28,7 +28,7 @@
 }
 
 -(NSString*)studentsKeyName:(NSString*)name plusLastName:(NSString*)lastName{
-    NSString* str = [lastName stringByAppendingString:[NSString stringWithFormat:@" %@",name]];
+    NSString* str = [lastName stringByAppendingString:[NSString stringWithFormat:@" %@ %@",name,name]];
     return str;
 }
 
