@@ -61,7 +61,7 @@
         [classRegister setObject:stud forKey:key];
     }
     
-    NSArray *keys = [[classRegister allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    NSArray* keys = [[classRegister allKeys] sortedArrayUsingSelector:@selector(compare:)];
     for (NSString* str in keys) {
         NSLog(@"%@", str);
     }
